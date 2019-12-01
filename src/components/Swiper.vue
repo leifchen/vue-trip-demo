@@ -4,7 +4,7 @@
       <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
-    <div class="swiper-pagination"  slot="pagination"></div>
+    <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
   </div>
 </template>
@@ -14,7 +14,10 @@ export default {
   name: 'HomeSwiper',
   data () {
     return {
-      swiperOption: {},
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      },
       list: [
         {
           id: '0001',
