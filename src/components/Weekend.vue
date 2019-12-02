@@ -4,7 +4,7 @@
     <ul>
       <li 
         class="item border-bottom" 
-        v-for="item of recommendList" 
+        v-for="item of list" 
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -22,23 +22,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/68/de862f94e383a6.jpg_r_640x214_f9df927b.jpg',
-          title: '福州打卡',
-          desc: '大美福州，必游之处'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/f6/82acfa5c7f472c.jpg_r_640x214_508da3cb.jpg',
-          title: '熊孩子玩乐',
-          desc: '与数千种海洋动物亲切对话，看人鲨共舞惊心动魄、梦幻美人鱼婀娜多姿、海狮幽默的表演'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -52,7 +37,7 @@ export default {
   .item-img-wrapper
     overflow: hidden
     height: 0
-    padding-bottom: 33.9%
+    padding-bottom: 37.09%
     .item-img
       width: 100%
   .item-info
@@ -63,5 +48,6 @@ export default {
     .item-desc
       line-heght: .4rem
       color: #ccc
+      margin-bottom: .1rem
       ellipsis()
 </style>

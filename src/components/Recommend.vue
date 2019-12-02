@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,23 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1502/4d/4d8df2e5c8a934d0.water.jpg_200x200_6be2c3bb.jpg',
-          title: '福州旗山森林温泉度假村',
-          desc: '适合一年四季泡温泉'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1804/76/76054ba23d8aba15a3.water.jpg_200x200_d7a548c3.jpg',
-          title: '福建天门山',
-          desc: '水流清澈，两岸怪石嶙峋，风景如画'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
